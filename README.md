@@ -88,7 +88,7 @@ $$
 
 ### Agent Comparison
 
-![Agent Comparison](Inventory 2/results/comparison.png)
+![Agent Comparison]( Inventory_2/results/comparison.png )
 
 ### Learning Behaviour
 
