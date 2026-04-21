@@ -1,0 +1,50 @@
+# openenv.yaml
+# Metadata file required by OpenEnv spec.
+# Describes this environment for validators and the HF Spaces hub.
+
+name: inventory-restock-env
+version: "1.0.0"
+description: >
+  A real-world reinforcement learning environment simulating inventory
+  restocking decisions for a small shop. The agent must decide when and
+  how much to reorder based on current stock, daily demand, and lead time.
+
+author: Pushkarpradhan
+tasks:
+  - id: 1
+    name: "Easy - Stable Demand"
+    difficulty: easy
+    description: "Fixed demand of 5 units/day, 1-day lead time, 20 starting units, 20 days."
+  - id: 2
+    name: "Medium - Variable Demand"
+    difficulty: medium
+    description: "Random demand 2-8 units/day, 3-day lead time, 15 starting units, 30 days."
+  - id: 3
+    name: "Hard - Demand Spikes"
+    difficulty: hard
+    description: "Mostly 2-12 units/day with occasional spikes up to 22 units/day, 5-day lead time, 10 starting units, 40 days."
+
+action_space:
+  type: discrete
+  field: restock_quantity
+  min: 0
+  max: 50
+
+observation_space:
+  fields:
+    - current_stock: int
+    - daily_demand: int
+    - lead_time: int
+    - day: int
+    - pending_order: int
+    - done: bool
+    - reward: float
+    - message: str
+
+reward_range: [-50.0, 50.0]   # per step
+
+tags:
+  - inventory-management
+  - supply-chain
+  - real-world
+  - openenv

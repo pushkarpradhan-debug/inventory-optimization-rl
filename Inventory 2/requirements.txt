@@ -1,0 +1,13 @@
+# server/requirements.txt
+# Python packages needed to run the environment server
+
+fastapi==0.110.0
+uvicorn==0.35.0
+pydantic==2.7.1
+pyyaml==6.0.1
+openenv-core==0.2.0
+
+numpy
+matplotlib
+
+# for openenv.yaml parsing
